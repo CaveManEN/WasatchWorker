@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasatch Worker | Contact</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+      <!-- Google Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Kirang+Haerang&display=swap" rel="stylesheet">
+  
+
+    <style>
+        /* Styling for the Contact Us Box */
+        main {
+            width: 80%;  /* Adjust the width as needed */
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;  /* White background for the form box */
+            border-radius: 15px;  /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+        }
+
+        main h1 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        form input,
+        form textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        form button {
+            padding: 12px 20px;
+            background-color: #35a79c;  /* Matching button color */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #2d8b79;  /* Darker green on hover */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop id="background-video">
+        <source src="/images/snow.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <div class="logo">
+            <h1><a href="index.html">Wasatch Worker</a></h1> <!-- Link to Home Page -->
+        </div>
+
+        <!-- Navigation Links -->
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact Us</h1>
+        <form action="contact.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+
+</body>
+</html>

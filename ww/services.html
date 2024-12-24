@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- External CSS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Kirang+Haerang&display=swap" rel="stylesheet">
+
+    <style>
+        /* Background Video */
+        #background-video {
+            position: absolute; /* Position it at the very back */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Make the video cover the entire area */
+            z-index: -1; /* Place it behind other content */
+        }
+
+        /* General Body and Page Layout */
+        body {
+            background-color: #35a79c; /* Update to the first color */
+            font-family: "Kirang Haerang", serif;
+            font-weight: 400;
+            font-style: normal;
+            margin: 0; /* Remove default margin */
+            overflow: hidden; /* Disable scrolling on the main page */
+            height: 100%; /* Full height */
+            position: fixed; /* Fix the entire page */
+            width: 100%; /* Full width */
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #35a79c ; /* Light green for header */
+            color: white;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo */
+        header .logo h1 {
+            font-size: 36px;
+            margin: 0;
+            color: white; /* Pale pink for logo */
+        }
+
+        header .logo h1 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Navigation links */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white; /* Pink for nav links */
+            text-decoration: none;
+            font-size: 20px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            font-family: "Barriecito", cursive; /* Updated font */
+        }
+
+        nav ul li a:hover {
+            color: #83d0c9; /* Light coral on hover */
+            text-decoration: underline; /* Adds emphasis */
+        }
+
+        .pickup-info {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #65c3ba; /* Pink background */
+            color: white;
+            padding: 10px;
+            position: sticky; /* Make it sticky */
+            top: 80px; /* Set the distance from the top so it stays below the header */
+            z-index: 99; /* Ensures it stays above other content */
+        }
+
+        /* Services Container (Fixed Page, Scrollable Services) */
+      /* Services Container (Fixed Page, Scrollable Services) */
+.services-container {
+    width: 70%; /* Make services container wider */
+    margin: 30px auto; /* Center it and push it down */
+    margin-top: 70px;
+    bottom: 20px;
+    padding: 20px;
+    background-color: #65c3ba; /* White background for service items */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Rounded corners for the entire services container */
+    height: 70vh; /* Set the container height */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on mobile */
+    position: relative;
+}
+
+.services-container::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+}
+
+.services-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Darker thumb color */
+    border-radius: 10px; /* Rounded edges for the scrollbar thumb */
+}
+
+.services-container::-webkit-scrollbar-track {
+    background: transparent; /* Transparent scrollbar track */
+}
+
+
+        /* "Our Services" Heading Box */
+        .services-heading {
+            width: 70%; /* Make the heading box the same width as the services container */
+            margin: 5px auto ; /* Center it and give it space from the top */
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: 	#35a79c; /* Light pink background */
+            color: white;
+            text-align: center;
+            font-size: 30px;
+            font-family: "Barriecito", cursive;
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+        }
+
+        /* Individual Service Box (Smaller Size) */
+        .service-box {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 12px; /* Rounded corners */
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .service-box:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-box h2 {
+            color: #35a79c; /* Pink for service titles */
+            font-size: 20px;
+        }
+
+        .service-box p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .service-box .price {
+            font-size: 16px;
+            color: #35a79c; /* Pink price */
+        }
+
+        .service-box .book-now-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #35a79c; /* Pink button */
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .service-box .book-now-btn:hover {
+            background-color: #ffaaa5; /* Light coral on hover */
+        }
+
+        /* Media Query for Mobile View */
+        @media (max-width: 768px) {
+            .services-container {
+                width: 90%; /* Make it even smaller on mobile */
+            }
+
+            .service-box {
+                margin-bottom: 10px;
+            }
+        }
+    </style>   
+
+</head>
+<body>
+
+    <!-- Header Section with Navigation -->
+    <header>
+        <div class="logo">
+            <h1><a href="index.html">Wasatch Worker</a></h1> <!-- Link to Home Page -->
+        </div>
+
+        <!-- Navigation Links -->
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <video autoplay muted loop id="background-video">
+        <source src="/images/snow.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Pickup and Drop-off Info -->
+    <div class="pickup-info">
+        <p><strong>Pickup and Drop-off is Always Free!</strong></p>
+    </div>
+
+   
+
+    <!-- Services Container -->
+    <div class="services-container">
+
+        <div class="services-heading">
+            Our Services
+        </div>
+
+        <!-- Hot Wax Service -->
+        <div class="service-box">
+            <h2>Hot Wax</h2>
+            <p>Our Hot Wax service is designed to enhance your ride by boosting speed and providing a smoother, more fluid experience on the slopes. The high-quality wax treatment nourishes your board's base, preventing it from drying out while ensuring optimal glide for effortless turns and control.</p>
+            <p class="price">$30</p>
+            <a href="book-now.html" class="book-now-btn">Book Now</a>
+        </div>
+
+        <!-- Hot Wax and Edges Service -->
+        <div class="service-box">
+            <h2>Hot Wax and Edges</h2>
+            <p>Our Hot Wax and Edges service provides a complete tune-up for your equipment. We remove any burrs and smooth out uneven edges for a seamless ride. Rust is carefully removed, ensuring optimal edge performance. Additionally, we prevent premature beveling of the edges, helping your equipment maintain peak control and responsiveness on the slopes.</p>
+            <p class="price">$50</p>
+            <a href="book-now.html" class="book-now-btn">Book Now</a>
+        </div>
+
+        <!-- Total Tune Up + Ptex Service -->
+        <div class="service-box">
+            <h2>Total Tune Up + Ptex</h2>
+            <p>This comprehensive service includes a full tune-up of your equipment, along with expert base repairs and the application of Ptex to fix any core shots. Our technique not only restores your board's base but also enhances its durability, extending the lifespan of your equipment so you're ready for more rides down the slopes.</p>
+            <p class="price">$60+</p>
+            <a href="book-now.html" class="book-now-btn">Book Now</a>
+        </div>
+    </div>
+
+    <script>
+        // Toggle the navigation menu on mobile when hamburger menu is clicked
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active'); // Toggle the 'active' class
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
