@@ -1,0 +1,165 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Make sure the video fills the background */
+#background-video {
+    position: absolute; /* Position it at the very back */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make the video cover the entire area */
+    z-index: -1; /* Place it behind other content */
+}
+
+/* Body styling */
+body {
+    background-color: #35a79c; /* Update to the first color */
+    font-family: "Kirang Haerang", serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 60px;
+    overflow: hidden; /* Hide any overflow caused by video */
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('/images/snowboard.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 60vh; /* Adjust height as needed */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    background-attachment: fixed;
+    border-radius: 20px; /* Create rounded corners */
+    width: 80vw; /* Make it responsive to screen width */
+    max-width: 800px; /* Set a max width for larger screens */
+    margin: 100px auto 50px auto; /* Adjust top margin to push the section down */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+    overflow: hidden; /* Prevent overflow of content */
+}
+
+/* Optional: Overlay */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+/* Text and Button Styling inside Hero Section */
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    color: #54b2a9; /* Update hero title color */
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    color: #65c3ba; /* Update hero subtitle color */
+}
+
+.hero .cta-button {
+    background-color: #83d0c9; /* Update button color */
+    color: white;
+    padding: 15px 25px;
+    font-size: 21px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.hero .cta-button:hover {
+    background-color: #54b2a9; /* Update button hover color */
+}
+
+/* Header */
+header {
+    background-color: #35a79c; /* Update header color */
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+header .logo h1 {
+    font-size: 30px;
+    margin: 0;
+    color: white; /* Update logo color */
+}
+
+header .logo h1 a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Navigation links */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white; /* Update nav links color */
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    font-family: "Barriecito"; /* Add Barriecito font */
+}
+
+nav ul li a:hover {
+    color: #54b2a9; /* Update nav links hover color */
+}
+
+/* Footer Styling */
+footer {
+    background: #35a79c; /* Update footer background */
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    font-family: "Barriecito", cursive;
+}
+
+/* Links */
+a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #83d0c9; /* Update link hover effect */
+}
+
