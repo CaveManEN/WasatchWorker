@@ -4,73 +4,200 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wasatch Worker | Contact</title>
-    <link rel="stylesheet" href="css/styles.css">
 
-      <!-- Google Fonts -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Kirang+Haerang&display=swap" rel="stylesheet">
-  
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Styling for the Contact Us Box */
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            padding-top: 80px; /* Space for the fixed header */
+        }
+
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Place the video behind all content */
+        }
+
+    header {
+    background: #35a79c;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-size: 30px;
+    margin: 0;
+    color: white;
+    font-family: "Bebas Neue", serif;
+}
+
+header .logo h1 a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Navigation links */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    font-family: "Roboto", sans-serif;
+}
+
+nav ul li a:hover {
+    color: #54b2a9;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    width: 30px;
+    height: 20px;
+    justify-content: space-between;
+    margin-left: auto; /* Push the hamburger menu to the far right */
+}
+
+.hamburger-menu span {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+}
+
+/* Media Query for mobile */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #35a79c;
+        padding: 20px;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    nav.active ul {
+        display: flex;
+    }
+}
+
+        /* Main Content */
         main {
-            width: 80%;  /* Adjust the width as needed */
+            width: 80%;
             max-width: 900px;
             margin: 50px auto;
             padding: 30px;
-            background-color: #fff;  /* White background for the form box */
-            border-radius: 15px;  /* Rounded corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         main h1 {
-            color: #333;
             font-size: 32px;
             margin-bottom: 20px;
             text-align: center;
+            color: #333;
+            font-family: 'Bebas Neue', serif;
         }
 
         form {
             display: flex;
             flex-direction: column;
+            gap: 20px;
         }
 
         form label {
             font-size: 16px;
-            margin-bottom: 8px;
             color: #333;
+            font-family: 'Roboto', sans-serif;
         }
 
-        form input,
-        form textarea {
+        form input, form textarea {
             padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
             font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             width: 100%;
         }
 
+        form textarea {
+            resize: none;
+        }
+
         form button {
-            padding: 12px 20px;
-            background-color: #35a79c;  /* Matching button color */
+            padding: 12px;
+            background-color: #35a79c;
             color: white;
             border: none;
             border-radius: 8px;
             font-size: 16px;
+            font-family: 'Roboto', sans-serif;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s;
         }
 
         form button:hover {
-            background-color: #2d8b79;  /* Darker green on hover */
+            background-color: #2d8b79;
         }
 
         footer {
             text-align: center;
             margin-top: 40px;
+            color: #555;
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
         }
+
+       
     </style>
 </head>
 <body>
@@ -82,10 +209,13 @@
 
     <header>
         <div class="logo">
-            <h1><a href="index.html">Wasatch Worker</a></h1> <!-- Link to Home Page -->
+            <h1><a href="index.html">Wasatch Worker</a></h1>
         </div>
-
-        <!-- Navigation Links -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <nav id="nav-menu">
             <ul>
                 <li><a href="about.html">About</a></li>
@@ -99,17 +229,29 @@
         <h1>Contact Us</h1>
         <form action="contact.php" method="post">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
             
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
             
+            <label for="phone-number">Phone Number</label>
+            <input type="tel" id="phone-number" name="phone-number" placeholder="Enter your phone number" required>
+
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
             
             <button type="submit">Send Message</button>
         </form>
     </main>
 
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('active');
+        }
+    </script>
+
 </body>
 </html>
+
+

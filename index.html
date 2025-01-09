@@ -7,12 +7,108 @@
     <title>Wasatch Worker | Home</title>
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Kirang+Haerang&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
+<style>
+    /* Header */
+    header {
+        background: #35a79c;
+        color: white;
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header .logo h1 {
+        font-size: 30px;
+        margin: 0;
+        color: white;
+        font-family: "Bebas Neue", serif;
+    }
+
+    header .logo h1 a {
+        text-decoration: none;
+        color: white;
+    }
+
+    /* Navigation links */
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        text-transform: uppercase;
+        transition: color 0.3s;
+        font-family: "Roboto", sans-serif;
+    }
+
+    nav ul li a:hover {
+        color: #54b2a9;
+    }
+
+    /* Hamburger Menu */
+    .hamburger-menu {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        width: 30px;
+        height: 20px;
+        justify-content: space-between;
+        margin-left: auto; /* Push the hamburger menu to the far right */
+    }
+
+    .hamburger-menu span {
+        width: 30px;
+        height: 4px;
+        background-color: white;
+    }
+
+    /* Media Query for mobile */
+    @media screen and (max-width: 768px) {
+        nav ul {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background: #35a79c;
+            padding: 20px;
+        }
+
+        nav ul li {
+            margin: 15px 0;
+        }
+
+        .hamburger-menu {
+            display: flex;
+        }
+
+        nav.active ul {
+            display: flex;
+        }
+    }
+</style>
 
 <body>
     <!-- Snowfall Container -->
@@ -27,6 +123,11 @@
     <header>
         <div class="logo">
             <h1><a href="index.html">Wasatch Worker</a></h1>
+        </div>
+        <div class="hamburger-menu" id="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
         <nav id="nav-menu">
             <ul>
@@ -46,6 +147,12 @@
         </section>
     </main>
 
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 
 </html>

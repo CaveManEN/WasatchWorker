@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="css/styles.css">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wasatch Worker | About</title>
     <link rel="stylesheet" href="css/styles.css">
 
-       <!-- Google Fonts -->
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Kirang+Haerang&display=swap" rel="stylesheet">
-   
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif; /* Default font for body */
+            background-color: #f4f4f4;
+        }
+
         /* Styling the About Us Section with a rounded box */
         main {
-            width: 80%;  /* Adjust the width as needed */
+            width: 80%;
             max-width: 900px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #fff;  /* White background for the box */
-            border-radius: 15px;  /* Rounded corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            height: 600px;  /* Shorter height */
-            overflow-y: auto;  /* Enable vertical scrolling */
+            height: 600px;
+            overflow-y: auto;
         }
 
         main h1 {
             color: #333;
             font-size: 32px;
             margin-bottom: 20px;
+            font-family: "Bebas Neue", serif; /* Title font */
         }
 
         main p {
             color: #555;
             font-size: 18px;
             margin-bottom: 20px;
+            font-family: "Roboto", sans-serif; /* Subtext font */
         }
 
         main img {
-            width: 100%;  /* Adjust the image to fit inside the box */
+            width: 100%;
             border-radius: 10px;
-            max-width: 600px;  /* Limit the size of the image */
+            max-width: 600px;
             margin-top: 20px;
         }
 
@@ -52,11 +66,119 @@
             color: #777;
             margin-top: 10px;
             font-style: italic;
+            font-family: "Roboto", sans-serif; /* Subtext font */
+        }
+
+    /* Header */
+header {
+    background: #35a79c;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-size: 30px;
+    margin: 0;
+    color: white;
+    font-family: "Bebas Neue", serif;
+}
+
+header .logo h1 a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Navigation links */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    font-family: "Roboto", sans-serif;
+}
+
+nav ul li a:hover {
+    color: #54b2a9;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    width: 30px;
+    height: 20px;
+    justify-content: space-between;
+    margin-left: auto; /* Push the hamburger menu to the far right */
+}
+
+.hamburger-menu span {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+}
+
+/* Media Query for mobile */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #35a79c;
+        padding: 20px;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    nav.active ul {
+        display: flex;
+    }
+}
+
+        /* Video Background */
+        #background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
     </style>
 </head>
-<body>
 
+<body>
     <video autoplay muted loop id="background-video">
         <source src="/images/snow.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -87,5 +209,14 @@
         <p class="image-caption">Cedric Cody, Founder of Wasatch Worker</p> <!-- Caption for the image -->
     </main>
 
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('active');
+        }
+    </script>
+    
 </body>
+
 </html>
+
