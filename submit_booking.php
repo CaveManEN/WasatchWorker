@@ -18,8 +18,8 @@ $message .= "Service Type: $service_type\n";
 
 // Your Telegram bot token and chat ID
 $botToken = '7512992618:AAFagG7MP2jSosZCWwCLgMmmZxIByDMagKk';
-$chatId = '6190145582'; // Use the chat ID you retrieved
-
+// Array of chat IDs
+$chatIds = ['6190145582', '7752964476']; 
 // Telegram API URL
 $telegramUrl = "https://api.telegram.org/bot$botToken/sendMessage";
 
