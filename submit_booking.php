@@ -6,6 +6,8 @@ $pickup_date = isset($_POST['pickup-date']) ? htmlspecialchars($_POST['pickup-da
 $pickup_time = isset($_POST['pickup-time']) ? htmlspecialchars($_POST['pickup-time']) : 'Unknown';
 $equipment_type = isset($_POST['equipment-type']) ? htmlspecialchars($_POST['equipment-type']) : 'Unknown';
 $service_type = isset($_POST['service-type']) ? htmlspecialchars($_POST['service-type']) : 'Unknown';
+$pickup_address = isset($_POST['pickup-address']) ? htmlspecialchars($_POST['pickup-address']) : 'Unknown'; // Pick-up Address
+$num_skis_snowboards = isset($_POST['num-skis-snowboards']) ? htmlspecialchars($_POST['num-skis-snowboards']) : 'Unknown'; // Number of Skis/Snowboards
 
 // Create the message to send to Telegram
 $message = "New Booking Received:\n";
@@ -13,6 +15,8 @@ $message .= "Name: $name\n"; // Add the Name field to the message
 $message .= "Phone Number: $phone_number\n";
 $message .= "Pick-up Date: $pickup_date\n";
 $message .= "Pick-up Time: $pickup_time\n";
+$message .= "Pick-up Address: $pickup_address\n"; // Add the Pick-up Address to the message
+$message .= "Number of Skis/Snowboards: $num_skis_snowboards\n"; // Add the Number of Skis/Snowboards to the message
 $message .= "Equipment Type: $equipment_type\n";
 $message .= "Service Type: $service_type\n";
 
@@ -63,4 +67,3 @@ foreach ($chatIds as $chatId) {
 header("Location: thank-you.html");
 exit;
 ?>
-
