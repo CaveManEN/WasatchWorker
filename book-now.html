@@ -260,41 +260,48 @@
         Pickup and Drop-off is Always F R E E !
     </div>
 
-    <div class="form-container">
-        <h1>Book Your Service</h1>
-        <form action="submit_booking.php" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+   <div class="form-container">
+    <h1>Book Your Service</h1>
+    <form action="submit_booking.php" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
-            <label for="phone-number">Phone Number</label>
-            <input type="tel" id="phone-number" name="phone-number" placeholder="Enter your phone number" required>
+        <label for="phone-number">Phone Number</label>
+        <input type="tel" id="phone-number" name="phone-number" placeholder="Enter your phone number" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-            
-            <label for="pickup-date">Pick-up Date</label>
-            <input type="date" id="pickup-date" name="pickup-date" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        
+        <label for="pickup-address">Pick-up Address</label>
+        <input type="text" id="pickup-address" name="pickup-address" placeholder="Enter your pick-up address" required>
 
-            <label for="pickup-time">Pick-up Time</label>
-            <small style="font-family: 'Roboto', sans-serif; color: #555; display: block; margin-top: 5px;">
-                Must be from 4 PM to 9 PM
-            </small>
-<input type="time" id="pickup_time" name="pickup_time" min="16:00" max="21:00" required>
+        <label for="num-skis-snowboards">Number of Skis/Snowboards</label>
+        <input type="number" id="num-skis-snowboards" name="num-skis-snowboards" placeholder="Enter the number of skis/snowboards" required>
 
-            <label for="equipment-type">Equipment Type</label>
-            <input type="text" id="equipment-type" name="equipment-type" placeholder="e.g., Snowboard, Skis" required>
+        <label for="pickup-date">Pick-up Date</label>
+        <input type="date" id="pickup-date" name="pickup-date" required>
 
-            <label for="service-type">Service Type</label>
-            <select id="service-type" name="service-type" required>
-                <option value="">Select a Service</option>
-                <option value="Hot Wax">Hot Wax</option>
-                <option value="Hot Wax Edges">Hot Wax + Edges</option>
-                <option value="Total Tune Up + Ptex">Total Tune Up + Ptex</option>
-            </select>
+        <label for="pickup-time">Pick-up Time</label>
+        <small style="font-family: 'Roboto', sans-serif; color: #555; display: block; margin-top: 5px;">
+            Must be from 4 PM to 9 PM
+        </small>
+        <input type="time" id="pickup_time" name="pickup_time" min="16:00" max="21:00" required>
 
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+        <label for="equipment-type">Equipment Type</label>
+        <input type="text" id="equipment-type" name="equipment-type" placeholder="e.g., Snowboard, Skis" required>
+
+        <label for="service-type">Service Type</label>
+        <select id="service-type" name="service-type" required>
+            <option value="">Select a Service</option>
+            <option value="Hot Wax">Hot Wax</option>
+            <option value="Hot Wax Edges">Hot Wax + Edges</option>
+            <option value="Total Tune Up + Ptex">Total Tune Up + Ptex</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
 
     <footer>
         &copy; 2025 Wasatch Worker. All Rights Reserved.
